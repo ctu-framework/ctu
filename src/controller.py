@@ -159,7 +159,6 @@ class Controller:
             # Handle NONE
             # -------------------------------
             if action is None:
-                # print(f"[ERROR] Step {step}: No action")
 
                 trace.append({
                     "type": "no_action",
@@ -175,7 +174,6 @@ class Controller:
             # Handle invalid tool
             # -------------------------------
             if tool not in available_tools:
-                # print(f"[ERROR] Step {step}: Invalid tool: {tool}")
 
                 trace.append({
                     "type": "invalid_tool",
@@ -205,13 +203,11 @@ class Controller:
                 if self.engine.feedback:
                     feedback = self.generate_feedback(reason, tool)
 
-                # print(f"[REJECTED] Step {step}: {msg}")
                 continue
 
             # -------------------------------
             # Accept action
             # -------------------------------
-            # print(f"[ACCEPTED] Step {step}: {tool}")
 
             output = self.get_tool_output(tools, tool)
             feedback = None
@@ -241,7 +237,6 @@ class Controller:
         # -------------------------------
         # Max steps
         # -------------------------------
-        # print("[WARNING] Max steps reached")
 
         return {
             "status": "max_steps_exceeded",

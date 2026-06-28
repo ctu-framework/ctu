@@ -124,35 +124,12 @@ class Evaluator:
     # ----------------------------------------
     def summarize(self):
 
-        # print("\n====== EVALUATION ======")
 
         if self.total == 0:
-            # print("No data.")
             return
 
-        # ---------------------------
-        # Status
-        # ---------------------------
         completion_rate = self.finished / self.total
         
-        # print(f"Total examples: {self.total}")
-        # print(f"Finished: {self.finished}")
-        # print(f"Premature finish: {self.premature_finish}")
-        # print(f"Max steps exceeded: {self.max_steps_exceeded}")
-        # print(f"Completion rate: {completion_rate:.2f}")
-
-        # ---------------------------
-        # Violations
-        # ---------------------------
-        # print(f"\nViolations:")
-        # print(f"  Total: {self.total_violations}")
-        # print(f"  Access: {self.access_violations}")
-        # print(f"  Temporal: {self.temporal_violations}")
-        # print(f"  Contextual: {self.contextual_violations}")
-
-        # ---------------------------
-        # Trace / Efficiency
-        # ---------------------------
         avg_events = self.total_events / self.total if self.total > 0 else 0
 
         acceptance_ratio = (
@@ -160,27 +137,10 @@ class Evaluator:
             if self.total_actions > 0 else 0
         )
 
-        # print(f"\nExecution:")
-        # print(f"  Avg events per run: {avg_events:.2f}")
-        # print(f"  Total actions: {self.total_actions}")
-        # print(f"  Accepted: {self.total_accepted}")
-        # print(f"  Rejected: {self.total_rejected}")
-        # print(f"  Acceptance ratio: {acceptance_ratio:.2f}")
-
-        # print(f"\nNoise:")
-        # print(f"  No action: {self.no_action_steps}")
-        # print(f"  Invalid tool: {self.invalid_tool_steps}")
-
-        # ---------------------------
-        # Agent quality
-        # ---------------------------
         first_step_success_rate = (
             self.first_step_success / self.total
             if self.total > 0 else 0
         )
-
-        # print(f"\nAgent quality:")
-        # print(f"  First-step success: {self.first_step_success / self.total:.2f}")
 
 
 

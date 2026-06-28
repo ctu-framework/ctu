@@ -141,7 +141,6 @@ All available tools:
             return data
 
         except Exception as e:
-            # print("[WARNING] Agent parsing failed:", e)
             return None
 
 

@@ -85,7 +85,6 @@ def extract_tool_output_map(pairs):
     output_map = {}
 
     if not pairs:
-        # print("[WARNING] No assistant-function pairs found.")
         return None
 
     for (a, f) in pairs:
@@ -95,7 +94,6 @@ def extract_tool_output_map(pairs):
         match = re.search(pattern, text)
 
         if not match:
-            # print("[WARNING] Failed to extract tool name using regex.")
             return None
 
         tool_name = match.group(1).strip()
@@ -108,14 +106,12 @@ def extract_tool_output_map(pairs):
         raw_value = f.get("value")
 
         if not raw_value:
-            # print(f"[WARNING] Missing value for tool '{tool_name}'.")
             return None
 
         # Repair + parse JSON (level 1)
         try:
             parsed = json.loads(raw_value)
         except Exception as e:
-            # print(f"[WARNING] Failed to parse JSON for tool '{tool_name}': {e}")
             return None
 
         # Extract response
@@ -323,7 +319,6 @@ def call_api(prompt, api_url, model, temperature):
         return data
 
     except Exception as e:
-        # print("[WARNING] LLM failed:", e)
         return []
 
 
@@ -367,11 +362,9 @@ def run_example(i, example):
     query = extract_user_query(conversations)
 
     if not system_text:
-        # print(f"[WARNING] Skipped {i}: invalid system message")
         return None
 
     if not query:
-        # print(f"[WARNING] Skipped {i}: invalid user query")
         return None
 
     try:
@@ -379,17 +372,14 @@ def run_example(i, example):
         output_map = extract_tool_output_map(pairs)
 
         if output_map is None:
-            # print(f"[WARNING] Skipped {i}: tool output extraction failed")
             return None
 
         api_block = extract_tool_block(system_text)
         tools = parse_tools(api_block, output_map)
     except Exception as e:
-        # print(f"[WARNING] Skipped {i}: tool parsing failed: {e}")
         return None
 
     if not tools:
-        # print(f"[WARNING] Skipped {i}: no tools found")
         return None
 
     # ====================================
@@ -426,7 +416,6 @@ def run_example(i, example):
 
     constraints = clean_constraints(constraints)
 
-    # print(f"Processed {i}...")
 
     return {
         "query": query,

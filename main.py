@@ -50,15 +50,11 @@ def resolve_capabilities(engine, enforce, feedback, guidance):
 
 def run_example(i, example, agent, engine_type):
 
-    # print("\n" + "=" * 50)
-    # print(f"Running example {i} (engine: {engine_type})")
-    # print("=" * 50)
 
     query = example["query"]
     tools = example["tools"]
     constraints = example["constraints"]
 
-    # print("Query:", query)
 
     # Select engine
     if engine_type == "no":
@@ -80,30 +76,11 @@ def run_example(i, example, agent, engine_type):
     # -------------------------------
     # Output result
     # -------------------------------
-    # print("\nFinal Result:")
     status = result["status"]
-    # print("Status:", status)
 
     history = result.get("history", [])
     trace = result.get("trace", [])
 
-    # print(f"Total valid steps (history): {len(history)}")
-    # print(f"Total events (trace): {len(trace)}")
-
-    # Diagnostics
-    # if status == "premature_finish":
-        # print("[INFO] Agent finished too early")
-
-    # elif status == "max_steps_exceeded":
-        # print("[INFO] Agent failed to complete within step limit")
-
-    # elif status == "finished":
-        # print("[INFO] Agent reached termination")
-
-    # Inspect last valid step
-    # if history:
-        # print("\nLast valid step:")
-        # print(history[-1])
 
     return result
 
