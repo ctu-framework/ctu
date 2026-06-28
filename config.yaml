@@ -1,0 +1,40 @@
+mode: "sample" # sample | full
+
+preprocess:
+  sample:
+    input_dataset_path: "data/toolllama_G123_dfs_sample.json"
+    output_dataset_path: "data/toolllama_G123_dfs_sample_processed.json"
+  full:
+    input_dataset_path: "data/toolllama_G123_dfs_train.json"
+    output_dataset_path: "data/toolllama_G123_dfs_train_processed.json"
+    max_examples: 4000
+
+  model: "llama3:8b" # (recommended llama3:8b)
+  temperature: 0
+  num_ctx: 4096 # (recommended: 4096)
+  api_url: "http://localhost:11434/api/generate"
+  max_workers: 1
+
+
+
+execution:
+  sample:
+    dataset_path: "data/toolllama_G123_dfs_sample_processed.json"
+    max_steps: 3
+  full:
+    dataset_path: "data/toolllama_G123_dfs_train_processed.json"
+    max_steps: 10
+
+
+  constraint_engines: ["kg"] # (e.g. ["no", "json", "kg"])
+
+  capabilities:
+    enforce: true
+    feedback: true
+    guidance: true # flip to false for ablation
+
+  model: "qwen2.5:7b" #(recommended: qwen2.5:7b, gemma3:12b)
+  temperature: 0
+  num_ctx: 4096 # (recommended: 4096)
+  api_url: "http://localhost:11434/api/generate"
+  max_workers: 1

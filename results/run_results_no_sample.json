@@ -1,0 +1,373 @@
+[
+  {
+    "status": "finished",
+    "history": [
+      {
+        "tool": "jokes_random_for_chuck_norris",
+        "output": "{\"categories\":[],\"created_at\":\"2020-01-05 13:42:28.143137\",\"icon_url\":\"https://assets.chucknorris.host/img/avatar/chuck-norris.png\",\"id\":\"w1QcOOGdStm9Wz27-AKCIw\",\"updated_at\":\"2020-01-05 13:42:28.143137\",\"url\":\"https://api.chucknorris.io/jokes/w1QcOOGdStm9Wz27-AKCIw\",\"value\":\"Chuck Norris doesn't clip his fingernails... he rips them out with his bare hands and regrows new ones immediately.\"}"
+      },
+      {
+        "tool": "get_math_fact_for_numbers",
+        "output": "{'text': 'the smallest natural number representable in two different ways as a sum of two positive cubes, as Ramanujan stated on the spot', 'number': 1729, 'found': True, 'type': 'math'}"
+      },
+      {
+        "tool": "Finish"
+      }
+    ],
+    "trace": [
+      {
+        "type": "action",
+        "tool": "jokes_random_for_chuck_norris",
+        "arguments": {},
+        "status": "accepted",
+        "reason": {
+          "type": "temporal_violation",
+          "required_before": "jokes_search_for_chuck_norris",
+          "missing": "jokes_search_for_chuck_norris",
+          "current": "jokes_random_for_chuck_norris"
+        }
+      },
+      {
+        "type": "action",
+        "tool": "get_math_fact_for_numbers",
+        "arguments": {
+          "number": "1729",
+          "json": "true"
+        },
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "Finish",
+        "arguments": {
+          "return_type": "give_answer",
+          "final_answer": "Here is your request fulfilled: A random Chuck Norris joke is 'Chuck Norris doesn't clip his fingernails... he rips them out with his bare hands and regrows new ones immediately.' The number 1729 has the fascinating mathematical property of being the smallest natural number that can be represented as a sum of two positive cubes in two different ways, as stated by Ramanujan."
+        },
+        "status": "accepted",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "status": "max_steps_exceeded",
+    "history": [
+      {
+        "tool": "service_status_for_luhn_algorithm",
+        "output": "{\"service_status\":\"OK\"}"
+      },
+      {
+        "tool": "service_status_for_luhn_algorithm",
+        "output": "{\"service_status\":\"OK\"}"
+      },
+      {
+        "tool": "validate_card_number_for_luhn_algorithm",
+        "output": "{'card_number': '4111111111111111', 'is_valid': True, 'issuer_category': 'Banking and financial', 'issuing_network': 'Visa'}"
+      }
+    ],
+    "trace": [
+      {
+        "type": "action",
+        "tool": "service_status_for_luhn_algorithm",
+        "arguments": {},
+        "status": "accepted",
+        "reason": {
+          "type": "temporal_violation",
+          "required_before": "validate_card_number_for_luhn_algorithm",
+          "missing": "validate_card_number_for_luhn_algorithm",
+          "current": "service_status_for_luhn_algorithm"
+        }
+      },
+      {
+        "type": "action",
+        "tool": "service_status_for_luhn_algorithm",
+        "arguments": {},
+        "status": "accepted",
+        "reason": {
+          "type": "temporal_violation",
+          "required_before": "validate_card_number_for_luhn_algorithm",
+          "missing": "validate_card_number_for_luhn_algorithm",
+          "current": "service_status_for_luhn_algorithm"
+        }
+      },
+      {
+        "type": "action",
+        "tool": "validate_card_number_for_luhn_algorithm",
+        "arguments": {
+          "number": "4532015112830366"
+        },
+        "status": "accepted",
+        "reason": {
+          "type": "contextual_violation",
+          "subtype": "value_mismatch",
+          "tool": "validate_card_number_for_luhn_algorithm",
+          "parameter": "number",
+          "expected": "card number",
+          "received": "4532015112830366"
+        }
+      }
+    ]
+  },
+  {
+    "status": "max_steps_exceeded",
+    "history": [
+      {
+        "tool": "get_word_for_random_word_api",
+        "output": "{'word': 'counterpreparation'}"
+      },
+      {
+        "tool": "get_word_for_random_word_api",
+        "output": "{'word': 'counterpreparation'}"
+      },
+      {
+        "tool": "get_word_for_random_word_api",
+        "output": "{'word': 'counterpreparation'}"
+      }
+    ],
+    "trace": [
+      {
+        "type": "action",
+        "tool": "get_word_for_random_word_api",
+        "arguments": {},
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "get_word_for_random_word_api",
+        "arguments": {},
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "get_word_for_random_word_api",
+        "arguments": {},
+        "status": "accepted",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "status": "max_steps_exceeded",
+    "history": [
+      {
+        "tool": "roll_for_diceforge",
+        "output": "{'dice': [{'sides': 6, 'results': [3], 'modifier': 5, 'total': 8}], 'total': 8}"
+      },
+      {
+        "tool": "roll_for_diceforge",
+        "output": "{'dice': [{'sides': 6, 'results': [3], 'modifier': 5, 'total': 8}], 'total': 8}"
+      },
+      {
+        "tool": "roll_for_diceforge",
+        "output": "{'dice': [{'sides': 6, 'results': [3], 'modifier': 5, 'total': 8}], 'total': 8}"
+      }
+    ],
+    "trace": [
+      {
+        "type": "action",
+        "tool": "roll_for_diceforge",
+        "arguments": {
+          "sides": [
+            20,
+            10,
+            6
+          ],
+          "count": [
+            1,
+            1,
+            1
+          ]
+        },
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "roll_for_diceforge",
+        "arguments": {
+          "sides": [
+            20,
+            10,
+            6
+          ],
+          "count": [
+            1,
+            1,
+            1
+          ]
+        },
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "roll_for_diceforge",
+        "arguments": {
+          "sides": [
+            20
+          ],
+          "count": [
+            1
+          ]
+        },
+        "status": "accepted",
+        "reason": {
+          "type": "contextual_violation",
+          "subtype": "value_mismatch",
+          "tool": "roll_for_diceforge",
+          "parameter": "sides",
+          "expected": [
+            "20",
+            "10",
+            "6"
+          ],
+          "received": [
+            20
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "status": "max_steps_exceeded",
+    "history": [
+      {
+        "tool": "stock_splits_for_freedom_finance",
+        "output": "{'total': 1, 'offset': 0, 'results': [{'date': '2022-06-06', 'before': 20, 'after': 1}], 'responseStatus': None}"
+      },
+      {
+        "tool": "dividends_for_freedom_finance",
+        "output": "{'total': 0, 'offset': 0, 'results': [], 'responseStatus': None}"
+      },
+      {
+        "tool": "stock_splits_for_freedom_finance",
+        "output": "{'total': 1, 'offset': 0, 'results': [{'date': '2022-06-06', 'before': 20, 'after': 1}], 'responseStatus': None}"
+      }
+    ],
+    "trace": [
+      {
+        "type": "action",
+        "tool": "stock_splits_for_freedom_finance",
+        "arguments": {
+          "symbol": "AMZN"
+        },
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "dividends_for_freedom_finance",
+        "arguments": {
+          "symbol": "AMZN"
+        },
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "stock_splits_for_freedom_finance",
+        "arguments": {
+          "symbol": "AMZN"
+        },
+        "status": "accepted",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "status": "max_steps_exceeded",
+    "history": [
+      {
+        "tool": "quote_for_quotes",
+        "output": "{'quote': 'An Apple a day keeps you busy anyway', 'author': 'Sahil'}"
+      },
+      {
+        "tool": "quote_for_quotes",
+        "output": "{'quote': 'An Apple a day keeps you busy anyway', 'author': 'Sahil'}"
+      },
+      {
+        "tool": "jokes_categories_for_chuck_norris"
+      }
+    ],
+    "trace": [
+      {
+        "type": "action",
+        "tool": "quote_for_quotes",
+        "arguments": {},
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "quote_for_quotes",
+        "arguments": {},
+        "status": "accepted",
+        "reason": null
+      },
+      {
+        "type": "action",
+        "tool": "jokes_categories_for_chuck_norris",
+        "arguments": {},
+        "status": "accepted",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "status": "max_steps_exceeded",
+    "history": [
+      {
+        "tool": "upcoming_matches_api_for_fantasy_cricket",
+        "output": "[]"
+      },
+      {
+        "tool": "upcoming_matches_api_for_fantasy_cricket",
+        "output": "[]"
+      },
+      {
+        "tool": "upcoming_matches_api_for_fantasy_cricket",
+        "output": "[]"
+      }
+    ],
+    "trace": [
+      {
+        "type": "action",
+        "tool": "upcoming_matches_api_for_fantasy_cricket",
+        "arguments": {},
+        "status": "accepted",
+        "reason": {
+          "type": "temporal_violation",
+          "required_before": "series_list_api_for_fantasy_cricket",
+          "missing": "series_list_api_for_fantasy_cricket",
+          "current": "upcoming_matches_api_for_fantasy_cricket"
+        }
+      },
+      {
+        "type": "action",
+        "tool": "upcoming_matches_api_for_fantasy_cricket",
+        "arguments": {},
+        "status": "accepted",
+        "reason": {
+          "type": "temporal_violation",
+          "required_before": "series_list_api_for_fantasy_cricket",
+          "missing": "series_list_api_for_fantasy_cricket",
+          "current": "upcoming_matches_api_for_fantasy_cricket"
+        }
+      },
+      {
+        "type": "action",
+        "tool": "upcoming_matches_api_for_fantasy_cricket",
+        "arguments": {},
+        "status": "accepted",
+        "reason": {
+          "type": "temporal_violation",
+          "required_before": "series_list_api_for_fantasy_cricket",
+          "missing": "series_list_api_for_fantasy_cricket",
+          "current": "upcoming_matches_api_for_fantasy_cricket"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,1187 @@
+[
+  {
+    "query": "Can you provide me with a random Chuck Norris joke? I also want to know a fascinating mathematical property about the number 1729. Please find something interesting about it.\nBegin!",
+    "tools": [
+      {
+        "name": "jokes_search_for_chuck_norris",
+        "description": "Free text search",
+        "parameters": [
+          {
+            "name": "query",
+            "type": "string",
+            "description": "The search term."
+          }
+        ]
+      },
+      {
+        "name": "jokes_random_for_chuck_norris",
+        "description": "Retrieve a random chuck joke in JSON format.",
+        "parameters": [],
+        "output": "{\"categories\":[],\"created_at\":\"2020-01-05 13:42:28.143137\",\"icon_url\":\"https://assets.chucknorris.host/img/avatar/chuck-norris.png\",\"id\":\"w1QcOOGdStm9Wz27-AKCIw\",\"updated_at\":\"2020-01-05 13:42:28.143137\",\"url\":\"https://api.chucknorris.io/jokes/w1QcOOGdStm9Wz27-AKCIw\",\"value\":\"Chuck Norris doesn't clip his fingernails... he rips them out with his bare hands and regrows new ones immediately.\"}"
+      },
+      {
+        "name": "jokes_categories_for_chuck_norris",
+        "description": "Retrieve a list of available joke categories.",
+        "parameters": []
+      },
+      {
+        "name": "get_date_fact_for_numbers",
+        "description": "Get a fact about a day of year",
+        "parameters": [
+          {
+            "name": "month",
+            "type": "string",
+            "description": "The 1-indexed month (eg. 6 for June)"
+          },
+          {
+            "name": "day",
+            "type": "string",
+            "description": "The day of the month"
+          },
+          {
+            "name": "fragment",
+            "type": "string",
+            "description": "Add \"?fragment=true\" to return the fact as a sentence fragment that can be easily included as part of a larger sentence. This means that the first word is lowercase and ending punctuation is omitted. For trivia and math, a noun phrase is returned that can "
+          },
+          {
+            "name": "json",
+            "type": "string",
+            "description": "Specify \"true\" to return result as JSON instead of plaintext."
+          }
+        ]
+      },
+      {
+        "name": "get_year_fact_for_numbers",
+        "description": "Get a fact about a year",
+        "parameters": [
+          {
+            "name": "year",
+            "type": "string",
+            "description": "The year of interest"
+          },
+          {
+            "name": "fragment",
+            "type": "string",
+            "description": "Add \"?fragment=true\" to return the fact as a sentence fragment that can be easily included as part of a larger sentence. This means that the first word is lowercase and ending punctuation is omitted. For trivia and math, a noun phrase is returned that can "
+          },
+          {
+            "name": "json",
+            "type": "string",
+            "description": "Specify \"true\" to return result as JSON instead of plaintext."
+          }
+        ]
+      },
+      {
+        "name": "get_math_fact_for_numbers",
+        "description": "Get a mathematical property about a number",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "string",
+            "description": "The integer of interest"
+          },
+          {
+            "name": "fragment",
+            "type": "string",
+            "description": "Add \"?fragment=true\" to return the fact as a sentence fragment that can be easily included as part of a larger sentence. This means that the first word is lowercase and ending punctuation is omitted. For trivia and math, a noun phrase is returned that can "
+          },
+          {
+            "name": "json",
+            "type": "string",
+            "description": "Specify \"true\" to return result as JSON instead of plaintext."
+          }
+        ],
+        "output": "{'text': 'the smallest natural number representable in two different ways as a sum of two positive cubes, as Ramanujan stated on the spot', 'number': 1729, 'found': True, 'type': 'math'}"
+      },
+      {
+        "name": "tag_for_tronald_dump",
+        "description": "Retrieve a list of available tags",
+        "parameters": []
+      },
+      {
+        "name": "random_quote_for_tronald_dump",
+        "description": "Retrieve a random quote.",
+        "parameters": []
+      },
+      {
+        "name": "tag_tag_for_tronald_dump",
+        "description": "Retrieve a quotes by a given tag.",
+        "parameters": [
+          {
+            "name": "tag",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "villains_for_superhero_search",
+        "description": "Return 20 random villains_for_superhero_search",
+        "parameters": []
+      },
+      {
+        "name": "search_for_superhero_search",
+        "description": "This endpoint searches through our superhero database",
+        "parameters": []
+      },
+      {
+        "name": "heroes_for_superhero_search",
+        "description": "Return a list of 20 random heroes",
+        "parameters": []
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": [
+          {
+            "name": "return_type",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "final_answer",
+            "type": "string",
+            "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+          }
+        ]
+      },
+      {
+        "name": "get_user_quote_extended",
+        "description": "Retrieve extended quote",
+        "parameters": [
+          {
+            "name": "user_id",
+            "type": "string"
+          },
+          {
+            "name": "quote_length",
+            "type": "integer"
+          }
+        ]
+      },
+      {
+        "name": "search_for_chuck_norris_jokes",
+        "description": "Search for Chuck Norris jokes",
+        "parameters": [
+          {
+            "name": "query",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "get_random_fact_for_numbers_extended",
+        "description": "Retrieve extended random fact for numbers",
+        "parameters": [
+          {
+            "name": "number_type",
+            "type": "string"
+          },
+          {
+            "name": "include_visuals",
+            "type": "boolean"
+          }
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "type": "access",
+        "forbidden": [
+          "get_user_quote_extended",
+          "search_for_chuck_norris_jokes",
+          "get_random_fact_for_numbers_extended"
+        ]
+      },
+      {
+        "type": "temporal",
+        "before": "jokes_search_for_chuck_norris",
+        "after": "jokes_random_for_chuck_norris"
+      },
+      {
+        "type": "temporal",
+        "before": "get_date_fact_for_numbers",
+        "after": "get_year_fact_for_numbers"
+      },
+      {
+        "type": "contextual",
+        "tool": "get_math_fact_for_numbers",
+        "requires": {
+          "number": "1729"
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "jokes_random_for_chuck_norris",
+        "requires": {}
+      }
+    ],
+    "id": 1
+  },
+  {
+    "query": "I'm a student working on a project about credit card fraud detection. Can you recommend an API that can validate card numbers? It would be helpful to know the service status of the API as well.\nBegin!",
+    "tools": [
+      {
+        "name": "validate_card_number_for_luhn_algorithm",
+        "description": "Validates given card number",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "output": "{'card_number': '4111111111111111', 'is_valid': True, 'issuer_category': 'Banking and financial', 'issuing_network': 'Visa'}"
+      },
+      {
+        "name": "service_status_for_luhn_algorithm",
+        "description": "Returns service status",
+        "parameters": [],
+        "output": "{\"service_status\":\"OK\"}"
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": [
+          {
+            "name": "return_type",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "final_answer",
+            "type": "string",
+            "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+          }
+        ]
+      },
+      {
+        "name": "validate_card_number_for_amex_algorithm",
+        "description": "Validate card number for American Express algorithm",
+        "parameters": [
+          {
+            "name": "card_number",
+            "type": "string"
+          },
+          {
+            "name": "expiration_date",
+            "type": "date"
+          }
+        ]
+      },
+      {
+        "name": "service_status_for_card_payment_processing",
+        "description": "Get service status for card payment processing",
+        "parameters": [
+          {
+            "name": "transaction_id",
+            "type": "integer"
+          },
+          {
+            "name": "payment_method",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "get_transaction_history_extended",
+        "description": "Retrieve extended transaction history",
+        "parameters": [
+          {
+            "name": "start_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          },
+          {
+            "name": "include_details",
+            "type": "boolean"
+          }
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "type": "access",
+        "forbidden": [
+          "validate_card_number_for_amex_algorithm",
+          "service_status_for_card_payment_processing",
+          "get_transaction_history_extended"
+        ]
+      },
+      {
+        "type": "temporal",
+        "before": "validate_card_number_for_luhn_algorithm",
+        "after": "service_status_for_luhn_algorithm"
+      },
+      {
+        "type": "contextual",
+        "tool": "validate_card_number_for_luhn_algorithm",
+        "requires": {
+          "number": "card number"
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "service_status_for_luhn_algorithm",
+        "requires": {}
+      }
+    ],
+    "id": 2
+  },
+  {
+    "query": "I'm a writer and I'm looking for a random word to spark my creativity. Can you give me a word? Additionally, I need information about the country with the country code 'US' from Referential DB.\nBegin!",
+    "tools": [
+      {
+        "name": "singleoffer_for_lbc_shark",
+        "description": "get single offer by ID",
+        "parameters": [
+          {
+            "name": "is_id",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "get_word_for_random_word_api",
+        "description": "Returns a random word. No parameters. Just randomness.",
+        "parameters": [],
+        "output": "{'word': 'counterpreparation'}"
+      },
+      {
+        "name": "get_word_by_length_for_random_word_api",
+        "description": "Returns a random word that has the specified length. For example, 7 will return any word that is 7 letters long, such as \"swallow\".",
+        "parameters": [
+          {
+            "name": "length",
+            "type": "integer",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "get_word_by_contain_for_random_word_api",
+        "description": "Returns a random word that contains a certain string.\nFor example, if the string is \"le\" then you will get any word that contains the string, whether it's at **the start, the end or the middle**, and you will get for example \"odourless\".",
+        "parameters": [
+          {
+            "name": "substring",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "country_details_for_referential_db",
+        "description": "Get the country details by country code",
+        "parameters": [
+          {
+            "name": "countrycode",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "cities_in_a_state_for_referential_db",
+        "description": "Get the list of cities in a state.",
+        "parameters": [
+          {
+            "name": "statecode",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "countrycode",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "states_for_referential_db",
+        "description": "Get the list of states within country",
+        "parameters": [
+          {
+            "name": "countrycode",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "makes_for_car_data",
+        "description": "get a list of supported makes",
+        "parameters": []
+      },
+      {
+        "name": "cars_for_car_data",
+        "description": "Retrieve and filter lists of cars",
+        "parameters": [
+          {
+            "name": "page",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "limit",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "make",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "year",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "years_for_car_data",
+        "description": "get a list of supported years",
+        "parameters": []
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": [
+          {
+            "name": "return_type",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "final_answer",
+            "type": "string",
+            "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+          }
+        ]
+      },
+      {
+        "name": "get_car_details_extended",
+        "description": "Retrieve extended car details",
+        "parameters": [
+          {
+            "name": "car_id",
+            "type": "string"
+          },
+          {
+            "name": "include_mileage",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "cities_in_a_country_for_referential_db",
+        "description": "Retrieve cities in a country",
+        "parameters": [
+          {
+            "name": "country_code",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "car_models_for_car_data",
+        "description": "Retrieve car models",
+        "parameters": []
+      }
+    ],
+    "constraints": [
+      {
+        "type": "access",
+        "forbidden": [
+          "get_car_details_extended",
+          "cities_in_a_country_for_referential_db",
+          "car_models_for_car_data"
+        ]
+      },
+      {
+        "type": "temporal",
+        "before": "singleoffer_for_lbc_shark",
+        "after": "get_word_by_length_for_random_word_api"
+      },
+      {
+        "type": "temporal",
+        "before": "country_details_for_referential_db",
+        "after": "cities_in_a_state_for_referential_db"
+      },
+      {
+        "type": "contextual",
+        "tool": "country_details_for_referential_db",
+        "requires": {
+          "countrycode": "'US'"
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "get_word_by_length_for_random_word_api",
+        "requires": {}
+      }
+    ],
+    "id": 3
+  },
+  {
+    "query": "I'm organizing a charity event and I need some ideas. Roll a twenty-sided die to determine the theme, a ten-sided die to determine the location, and a six-sided die to determine the activities. Also, fetch the abilities of the champion Garen in League of Legends.\nBegin!",
+    "tools": [
+      {
+        "name": "roll_for_diceforge",
+        "description": "Rolls a set of dice and returns the results.\n\nMethods: GET, POST\n\nParameters:\n\nsides (integer): A list of integers representing the number of sides for each die.\ncount (integer): A list of integers representing the number of times to roll each die. Default",
+        "parameters": [
+          {
+            "name": "sides",
+            "type": "integer",
+            "description": ""
+          },
+          {
+            "name": "count",
+            "type": "integer",
+            "description": ""
+          },
+          {
+            "name": "advantage",
+            "type": "boolean",
+            "description": ""
+          },
+          {
+            "name": "modifier",
+            "type": "integer",
+            "description": ""
+          }
+        ],
+        "output": "{'dice': [{'sides': 6, 'results': [3], 'modifier': 5, 'total': 8}], 'total': 8}"
+      },
+      {
+        "name": "statroll_for_diceforge",
+        "description": "Rolls 4d6 for generating character stats, dropping the lowest die result from the total, and returns the results.\n\nMethods: GET, POST\n\nParameters:\n\nmodifier (integer): An integer representing the modifier to apply to the total of the stat roll.",
+        "parameters": []
+      },
+      {
+        "name": "pion_abilities_as_text_for_league_of_legends_champion_informaion",
+        "description": "Accepts a comma delimited list of champion names/nicknames and returns a text list of champions as well as their passive and standard abilities.",
+        "parameters": [
+          {
+            "name": "champion",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "get_champions_for_league_of_legends_champion_informaion",
+        "description": "Accepts a comma delimited list of champion names or nicknames.\n\nReturns a list of Champions full names and list of passive ability and standard abilities in an on object format.",
+        "parameters": []
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": [
+          {
+            "name": "return_type",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "final_answer",
+            "type": "string",
+            "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+          }
+        ]
+      },
+      {
+        "name": "get_game_state_for_diceforge",
+        "description": "Retrieve current game state",
+        "parameters": [
+          {
+            "name": "game_id",
+            "type": "string"
+          },
+          {
+            "name": "include_players",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "roll_for_combat_diceforge",
+        "description": "Roll for combat",
+        "parameters": [
+          {
+            "name": "player_id",
+            "type": "string"
+          },
+          {
+            "name": "monster_name",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "type": "access",
+        "forbidden": [
+          "get_game_state_for_diceforge",
+          "roll_for_combat_diceforge"
+        ]
+      },
+      {
+        "type": "temporal",
+        "before": "roll_for_diceforge",
+        "after": "statroll_for_diceforge"
+      },
+      {
+        "type": "temporal",
+        "before": "get_champions_for_league_of_legends_champion_informaion",
+        "after": "pion_abilities_as_text_for_league_of_legends_champion_informaion"
+      },
+      {
+        "type": "contextual",
+        "tool": "roll_for_diceforge",
+        "requires": {
+          "sides": [
+            "20",
+            "10",
+            "6"
+          ],
+          "count": [
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "pion_abilities_as_text_for_league_of_legends_champion_informaion",
+        "requires": {
+          "champion": "Garen"
+        }
+      }
+    ],
+    "id": 4
+  },
+  {
+    "query": "I want to analyze the stock splits and dividends for the symbol AMZN. Can you provide me with the information?\nBegin!",
+    "tools": [
+      {
+        "name": "quarterly_cashflow_statements_for_freedom_finance",
+        "description": "Quarterly cashflow statements",
+        "parameters": [
+          {
+            "name": "symbol",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "quarterly_balance_sheets_for_freedom_finance",
+        "description": "Quarterly balance sheet statements",
+        "parameters": [
+          {
+            "name": "symbol",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "quarterly_income_statements_for_freedom_finance",
+        "description": "Quarterly income statements",
+        "parameters": [
+          {
+            "name": "symbol",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "yearly_balance_sheets_for_freedom_finance",
+        "description": "Annual balance sheet statements",
+        "parameters": [
+          {
+            "name": "symbol",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "yearly_income_statements_for_freedom_finance",
+        "description": "Annual income statements",
+        "parameters": [
+          {
+            "name": "symbol",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "yearly_cashflow_statements_for_freedom_finance",
+        "description": "Annual cashflow statements",
+        "parameters": [
+          {
+            "name": "symbol",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "stock_splits_for_freedom_finance",
+        "description": "List all stock splits for given stock symbol",
+        "parameters": [
+          {
+            "name": "symbol",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "orderby",
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "output": "{'total': 1, 'offset': 0, 'results': [{'date': '2022-06-06', 'before': 20, 'after': 1}], 'responseStatus': None}"
+      },
+      {
+        "name": "dividends_for_freedom_finance",
+        "description": "Download dividend history by specific stock symbol",
+        "parameters": [
+          {
+            "name": "symbol",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "orderby",
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "output": "{'total': 0, 'offset': 0, 'results': [], 'responseStatus': None}"
+      },
+      {
+        "name": "companies_by_exchange_for_freedom_finance",
+        "description": "Convenient User-Friendly Manually Populated List Of Common Stocks Per Exchange Code. Not Guaranteed To Be Up To Date.",
+        "parameters": [
+          {
+            "name": "exchangecode",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "list_exchanges_for_freedom_finance",
+        "description": "List all exchanges known to have stocks associated with them",
+        "parameters": []
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": [
+          {
+            "name": "return_type",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "final_answer",
+            "type": "string",
+            "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+          }
+        ]
+      },
+      {
+        "name": "quarterly_income_statements_extended",
+        "description": "Retrieve extended quarterly income statements",
+        "parameters": [
+          {
+            "name": "company_id",
+            "type": "string"
+          },
+          {
+            "name": "include_segments",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "yearly_cashflow_statements_analyzed",
+        "description": "Analyze yearly cash flow statements",
+        "parameters": [
+          {
+            "name": "company_id",
+            "type": "string"
+          },
+          {
+            "name": "include_trend_analysis",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "stock_splits_historical",
+        "description": "Retrieve historical stock splits",
+        "parameters": [
+          {
+            "name": "start_date",
+            "type": "date"
+          },
+          {
+            "name": "end_date",
+            "type": "date"
+          }
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "type": "access",
+        "forbidden": [
+          "quarterly_income_statements_extended",
+          "yearly_cashflow_statements_analyzed",
+          "stock_splits_historical"
+        ]
+      },
+      {
+        "type": "temporal",
+        "before": "quarterly_cashflow_statements_for_freedom_finance",
+        "after": "quarterly_balance_sheets_for_freedom_finance"
+      },
+      {
+        "type": "temporal",
+        "before": "quarterly_income_statements_for_freedom_finance",
+        "after": "quarterly_cashflow_statements_for_freedom_finance"
+      },
+      {
+        "type": "contextual",
+        "tool": "stock_splits_for_freedom_finance",
+        "requires": {
+          "symbol": "AMZN"
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "dividends_for_freedom_finance",
+        "requires": {
+          "symbol": "AMZN"
+        }
+      }
+    ],
+    "id": 5
+  },
+  {
+    "query": "I'm organizing a surprise party for my best friend's birthday. Can you suggest some funny jokes to entertain the guests? Also, find a quote about friendship to include in the party decorations. Additionally, check if there are any Chuck Norris jokes related to birthdays.\nBegin!",
+    "tools": [
+      {
+        "name": "quote_for_quotes",
+        "description": "Get a random Quote",
+        "parameters": [],
+        "output": "{'quote': 'An Apple a day keeps you busy anyway', 'author': 'Sahil'}"
+      },
+      {
+        "name": "jokes_categories_for_chuck_norris",
+        "description": "Retrieve a list of available joke categories.",
+        "parameters": []
+      },
+      {
+        "name": "jokes_random_for_chuck_norris",
+        "description": "Retrieve a random chuck joke in JSON format.",
+        "parameters": []
+      },
+      {
+        "name": "jokes_search_for_chuck_norris",
+        "description": "Free text search",
+        "parameters": [
+          {
+            "name": "query",
+            "type": "string",
+            "description": "The search term."
+          }
+        ]
+      },
+      {
+        "name": "v1_jokes_for_jokes_by_api_ninjas",
+        "description": "API Ninjas Jokes API endpoint.",
+        "parameters": [],
+        "output": "[{'joke': 'Why Does Snoop Dogg need an umbrella? For drizzle, my nizzle.'}]"
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": [
+          {
+            "name": "return_type",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "final_answer",
+            "type": "string",
+            "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+          }
+        ]
+      },
+      {
+        "name": "get_quote_extended",
+        "description": "Retrieve extended quote information",
+        "parameters": [
+          {
+            "name": "quote_id",
+            "type": "string"
+          },
+          {
+            "name": "include_author",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "jokes_categories_for_dwayne_johnson",
+        "description": "Get jokes categorized for Dwayne Johnson",
+        "parameters": [
+          {
+            "name": "category",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "v2_jokes_for_jokes_by_api_ninjas",
+        "description": "Retrieve jokes from API Ninjas v2",
+        "parameters": []
+      }
+    ],
+    "constraints": [
+      {
+        "type": "access",
+        "forbidden": [
+          "get_quote_extended",
+          "jokes_categories_for_dwayne_johnson",
+          "v2_jokes_for_jokes_by_api_ninjas"
+        ]
+      },
+      {
+        "type": "temporal",
+        "before": "quote_for_quotes",
+        "after": "jokes_categories_for_chuck_norris"
+      },
+      {
+        "type": "temporal",
+        "before": "v1_jokes_for_jokes_by_api_ninjas",
+        "after": "Finish"
+      },
+      {
+        "type": "contextual",
+        "tool": "jokes_search_for_chuck_norris",
+        "requires": {
+          "query": "birthday"
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "quote_for_quotes",
+        "requires": {}
+      },
+      {
+        "type": "contextual",
+        "tool": "jokes_categories_for_chuck_norris",
+        "requires": {}
+      }
+    ],
+    "id": 6
+  },
+  {
+    "query": "I'm a cricket enthusiast and want to stay updated with upcoming matches, series list, match details, live scores, squad information, and playing eleven. Can you help me gather this information? Please use the necessary parameters for each API call.\nBegin!",
+    "tools": [
+      {
+        "name": "upcoming_matches_api_for_fantasy_cricket",
+        "description": "A list of Upcoming cricket matches from around the world. Any issues, queries, api integration, custom plan or to **Create your own Fantasy Sports Application**  contact us at support@techflinch.com",
+        "parameters": [],
+        "output": "[]"
+      },
+      {
+        "name": "series_list_api_for_fantasy_cricket",
+        "description": "A list of currently running  and upcoming cricket series from around the world. Any issues, queries, api integration, custom plan or to **Create your own Fantasy Sports Application**  contact us at support@techflinch.com",
+        "parameters": []
+      },
+      {
+        "name": "matchlist_by_seriesid_for_fantasy_cricket",
+        "description": "Using Series ID get the name, participating teams, start date, end date and match keys for the matches of a specified Series. Any issues, queries, api integration, custom plan or to **Create your own Fantasy Sports Application**  contact us at support@tech",
+        "parameters": [
+          {
+            "name": "seriesid",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "live_fantasy_score_for_fantasy_cricket",
+        "description": "Real-time and Low-Latency Match Live Score API. Get the match score, Batting, bowling and fielding information for a specified match in real time\nAny issues, queries, api integration, custom plan or to **Create your own Fantasy Sports Application**  contac",
+        "parameters": [
+          {
+            "name": "matchid",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "fantasy_squad_api_for_fantasy_cricket",
+        "description": "Using match ID get the list of players in the squad for the match as announced by the teams. Any issues, queries, api integration, custom plan or to **Create your own Fantasy Sports Application**  contact us at support@techflinch.com",
+        "parameters": [
+          {
+            "name": "matchid",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "playing_eleven_api_for_fantasy_cricket",
+        "description": "Get Playing Eleven by matchid when it's announced by the teams. Any issues, queries, api integration, custom plan or to **Create your own Fantasy Sports Application**  contact us at support@techflinch.com",
+        "parameters": [
+          {
+            "name": "matchid",
+            "type": "string",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "live_matches_api_for_fantasy_cricket",
+        "description": "A list of cricket matches from around the world that are currently Live. Any issues, queries, api integration, custom plan or to **Create your own Fantasy Sports Application**  contact us at support@techflinch.com",
+        "parameters": []
+      },
+      {
+        "name": "Finish",
+        "description": "If you believe that you have obtained a result that can answer the task, please call this function to provide the final answer. Alternatively, if you recognize that you are unable to proceed with the task in the current state, call this function to restart. Remember: you must ALWAYS call this function at the end of your attempt, and the only part that will be shown to the user is the final answer, so it should contain sufficient information.",
+        "parameters": [
+          {
+            "name": "return_type",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "final_answer",
+            "type": "string",
+            "description": "The final answer you want to give the user. You should have this field if \"return_type\"==\"give_answer\""
+          }
+        ]
+      },
+      {
+        "name": "get_match_stats_extended",
+        "description": "Retrieve extended match statistics",
+        "parameters": [
+          {
+            "name": "match_id",
+            "type": "string"
+          },
+          {
+            "name": "include_player_data",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "get_squad_performance",
+        "description": "Evaluate fantasy squad performance",
+        "parameters": [
+          {
+            "name": "squad_id",
+            "type": "string"
+          },
+          {
+            "name": "start_date",
+            "type": "date"
+          }
+        ]
+      },
+      {
+        "name": "predict_match_outcome",
+        "description": "Predict match outcome based on historical data",
+        "parameters": [
+          {
+            "name": "match_id",
+            "type": "string"
+          },
+          {
+            "name": "confidence_level",
+            "type": "integer"
+          }
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "type": "access",
+        "forbidden": [
+          "get_match_stats_extended",
+          "get_squad_performance",
+          "predict_match_outcome"
+        ]
+      },
+      {
+        "type": "temporal",
+        "before": "series_list_api_for_fantasy_cricket",
+        "after": "upcoming_matches_api_for_fantasy_cricket"
+      },
+      {
+        "type": "temporal",
+        "before": "matchlist_by_seriesid_for_fantasy_cricket",
+        "after": "live_matches_api_for_fantasy_cricket"
+      },
+      {
+        "type": "contextual",
+        "tool": "matchlist_by_seriesid_for_fantasy_cricket",
+        "requires": {
+          "seriesid": "value"
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "live_fantasy_score_for_fantasy_cricket",
+        "requires": {
+          "matchid": "value"
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "fantasy_squad_api_for_fantasy_cricket",
+        "requires": {
+          "matchid": "value"
+        }
+      },
+      {
+        "type": "contextual",
+        "tool": "playing_eleven_api_for_fantasy_cricket",
+        "requires": {
+          "matchid": "value"
+        }
+      }
+    ],
+    "id": 7
+  }
+]

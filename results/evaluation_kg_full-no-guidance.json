@@ -1,0 +1,27 @@
+{
+  "total": 618,
+  "finished": 91,
+  "premature_finish": 4,
+  "max_steps_exceeded": 523,
+  "completion_rate": 0.14724919093851133,
+  "violations": {
+    "total": 2923,
+    "access": 368,
+    "temporal": 1056,
+    "contextual": 1499
+  },
+  "execution": {
+    "avg_events": 9.22653721682848,
+    "total_actions": 5259,
+    "accepted": 2336,
+    "rejected": 2923,
+    "acceptance_ratio": 0.4441909108195474
+  },
+  "noise": {
+    "no_action": 100,
+    "invalid_tool": 343
+  },
+  "agent_quality": {
+    "first_step_success_rate": 0.008090614886731391
+  }
+}
