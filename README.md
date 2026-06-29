@@ -57,7 +57,6 @@ The full dataset is derived from [ToolBench](https://github.com/OpenBMB/ToolBenc
 
 ---
 
-
 ### Configuration
 
 Experiments are controlled via `config.yaml`.
@@ -74,6 +73,16 @@ execution:
     guidance: true
 ```
 
+---
+
+### LLM Backend
+
+Make sure your LLM backend and models are working. If using Ollama:
+```bash
+ollama serve
+ollama pull llama3:8b
+ollama pull qwen2.5:7b
+```
 ---
 
 ### Preprocessing
@@ -94,10 +103,12 @@ python main.py
 
 ### Results
 
-Sample results are included under:
+Sample results are:
 
 ```
-results/
+results/evaluation_no_sample.json
+results/evaluation_json_sample.json
+results/evaluation_kg_sample.json
 ```
 
 ---
@@ -117,7 +128,7 @@ results/
   title={Constraint-Aware Tool Use for LLM Agents},
   author={...},
   booktitle={ICSE},
-  year={2026}
+  year={2027}
 }
 ```
 -->
