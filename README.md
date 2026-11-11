@@ -53,7 +53,9 @@ This subset is intended for **quick reproducibility** and runs in a few minutes.
 
 The full dataset is derived from [ToolBench](https://github.com/OpenBMB/ToolBench).
 
- Download data.zip from: [Google Drive](https://drive.google.com/drive/folders/1TysbSWYpP8EioFu9xPJtpbJZMLLmwAmL). Extract the required file `data/toolllama_G123_dfs_train.json` to the project folder `data/`.
+Download data.zip from: [Google Drive](https://drive.google.com/drive/folders/1TysbSWYpP8EioFu9xPJtpbJZMLLmwAmL). (Official ToolBench distribution). Extract the required file `data/toolllama_G123_dfs_train.json` to the project folder `data/`.
+
+If the Google Drive link is unavailable, the file is also available from: [Hugging Face](https://huggingface.co/datasets/Yhyu13/ToolBench_toolllama_G123_dfs)
 
 ---
 
